@@ -45,8 +45,19 @@ except:
     print("La valeur doit être un nobmre !")
 else:
     if(inventory>5):
-        raise ZeroDivisionError("Inventory full !")
+        raise ValueError("Inventory full !")
     else:
         print("Vous pouvez ajouter vos items")
-# Asertion :
 
+# L'asertion permet de créer une erreur :
+
+inventory = input("Combien d'item voulez vous ajouter ? - ")
+try:
+    inventory = int(inventory)
+    assert inventory<5 # L'assertion créer une erreur lorsque la valeur est différente
+except AssertionError: # Message lors de l'erreur de l'assertion
+    print("Full inventory")
+except:
+    print("La valeur doit être un nobmre !")
+else:
+    print("Vous pouvez ajouter vos items")
